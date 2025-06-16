@@ -118,16 +118,22 @@
     }
 
     @media (max-width: 400px) {
+        .experience-page {
+            margin-top: 2em;
+        }
+
         .experience-wrapper {
-            background-image: url("/div-tablet.svg");
+            background-image: url("/div-tablet3.svg");
+            margin-top: 0;
+            padding-top: 0;
         }
 
         .experience-text {
             width: 250px;
             height: 400;
-            font-size: 11px;
+            font-size: 10px;
             padding: 0;
-            padding-top: 1.5em;
+            padding-top: 3em;
         }
 
         .experience-title {
