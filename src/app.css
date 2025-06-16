@@ -1,0 +1,18 @@
+:root {
+  font-family: "Bagel Fat One", system-ui;
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+letter-spacing: 0.2dvb;
+background-color: var(--beige);
+color: var(--green);
+  
+  --green: #7AA160;
+  --beige: #FBFFEE;
+}
+
+body {
+	height: 100vh;
+	margin: 0;
+}
+
+
