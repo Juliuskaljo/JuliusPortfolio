@@ -6,12 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@tsconfig/svelte": "^5.0.4",
+    "gh-pages": "^6.3.0",
     "svelte": "^5.28.1",
     "svelte-check": "^4.1.6",
     "svelte-routing": "^2.13.0",
@@ -20,6 +22,7 @@
   },
   "dependencies": {
     "embla-carousel-svelte": "^8.6.0",
-    "svelte-carousel": "^1.0.25"
+    "svelte-carousel": "^1.0.25",
+    "svelte-spa-router": "^4.0.1"
   }
 }

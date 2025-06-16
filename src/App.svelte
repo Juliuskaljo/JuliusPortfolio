@@ -1,51 +1,34 @@
 <script lang="ts">
-    import { Router, Route } from "svelte-routing";
+    import Router from "svelte-spa-router";
     import About from "./lib/Pages/About.svelte";
     import Projects from "./lib/Pages/Projects.svelte";
     import Contact from "./lib/Pages/Contact.svelte";
-    import { onMount } from "svelte";
     import { locale, t } from "./lib/i18n";
-
-    export let url = "";
-    let currentPath = "";
-
-    onMount(() => {
-        currentPath = window.location.pathname;
-    });
 
     function toggleLang() {
         locale.update((l) => (l === "sv" ? "en" : "sv"));
     }
+
+    const routes = {
+        "/": About,
+        "/projects": Projects,
+        "/contact": Contact,
+    };
 </script>
 
+<nav>
+    <a href="#/" class="navlink">{$t.about}</a>
+    <p class="nav-devider">|</p>
+    <a href="#/projects" class="navlink">{$t.projects}</a>
+    <p class="nav-devider">|</p>
+    <a href="#/contact" class="navlink">{$t.contact}</a>
+    <button class="lang-btn" on:click|preventDefault={toggleLang}
+        >{$t.language}</button
+    >
+</nav>
+
 <main>
-    <Router {url}>
-        <nav>
-            <a href="/" class="navlink" class:active={currentPath === "/"}
-                >{$t.about}</a
-            >
-            <p class="nav-devider">|</p>
-            <a
-                href="/projects"
-                class="navlink"
-                class:active={currentPath === "/projects"}>{$t.projects}</a
-            >
-            <p class="nav-devider">|</p>
-            <a
-                href="/contact"
-                class="navlink"
-                class:active={currentPath === "/contact"}>{$t.contact}</a
-            >
-            <button class="lang-btn" on:click|preventDefault={toggleLang}
-                >{$t.language}</button
-            >
-        </nav>
-        <div>
-            <Route path="/"><About /></Route>
-            <Route path="/projects"><Projects /></Route>
-            <Route path="/contact"><Contact /></Route>
-        </div>
-    </Router>
+    <Router {routes} />
 </main>
 
 <style>
