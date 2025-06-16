@@ -127,7 +127,7 @@
             height: 400;
             font-size: 11px;
             padding: 0;
-            padding-top: 3em;
+            padding-top: 1.5em;
         }
 
         .experience-title {
